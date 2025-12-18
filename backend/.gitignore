@@ -1,0 +1,28 @@
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+env/
+venv/
+.venv/
+
+# Caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Test artifacts
+.coverage
+.coverage.*
+htmlcov/
+test.db
+*.sqlite3
+
+# IDEs and OS
+.vscode/
+.idea/
+.DS_Store
+*.swp

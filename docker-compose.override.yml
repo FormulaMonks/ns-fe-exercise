@@ -1,0 +1,19 @@
+services:
+  backend:
+    build: ./backend
+    command: bash -c "python init.py && uvicorn app.main:app --host 0.0.0.0 --port 8000"
+    volumes:
+      - ./backend:/app
+      - ./data:/data
+    environment:
+      DATABASE_URL: postgresql://${DB_USER:-fintech_user}:${DB_PASSWORD:-fintech_password}@db:5432/${DB_NAME:-fintech_db}?sslmode=disable
+      SECRET_KEY: ${SECRET_KEY:-your-secret-key-for-security}
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
