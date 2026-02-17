@@ -76,6 +76,8 @@ If you prefer not to use dev containers:
 3.  **Explore:** Open `http://localhost:3000` in your browser to see the frontend. The backend API is at `http://localhost:8000`.
 4.  **Stop Services:** Press `Ctrl+C` to stop (cleanup happens automatically).
 
+**Note:** Use `seed.sh` to load the database.
+
 **Note:** All environment variables have sensible defaults. You don't need to create a `.env` file unless you want to customize settings (see `.env.example` for reference).
 
 **Security Note:** This exercise uses hardcoded database credentials (e.g., `fintech_password`) for convenience. This is acceptable for a local development exercise but is **NOT a recommended practice for production environments**. In production, always use secure secret management solutions (e.g., AWS Secrets Manager, Azure Key Vault, HashiCorp Vault) and never commit credentials to version control.
